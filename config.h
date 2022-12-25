@@ -68,16 +68,14 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_green, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
-static const char *roficmd[] = { "rofi", "-show", NULL };
-static const char *powercmd[] = { "rofi", "-show power-menu -modi power-menu:~/.local/bin/rofi-power-menu", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,						XK_w,		spawn,			SHCMD("playerctl --player=ncspot,spotify play-pause") },
 	{ MODKEY,						XK_e,		spawn,			SHCMD("playerctl --player=ncspot,spotify next") },
-	{ MODKEY,						XK_e,		spawn,			SHCMD("playerctl --player=ncspot,spotify previous") },
-	{ MODKEY,						XK_p,	   spawn,		   {.v = roficmd } },
-	{ MODKEY,						XK_Escape, spawn,		   {.v = powercmd } },
+	{ MODKEY,						XK_q,		spawn,			SHCMD("playerctl --player=ncspot,spotify previous") },
+	{ MODKEY,						XK_p,		spawn,		   SHCMD("rofi -show") },
+	{ MODKEY,						XK_Escape, spawn,		   SHCMD("rofi -show power-menu -modi power-menu:~/.local/bin/rofi-power-menu") },
 	{ MODKEY,						XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,						XK_b,	   spawn,		   {.v = (const char*[]){ BROWSER, NULL } } },
 	{ MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
