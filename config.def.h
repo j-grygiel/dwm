@@ -19,7 +19,7 @@ static const char col_gray3[]       = "#d5c4a1";
 // current tag and current window font colour
 static const char col_gray4[]       = "#282828";
 // bar second colour (blue) and active window border colour
-static const char col_green[]        = "#b8bb26";
+static const int focusonwheel       = 0;
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
