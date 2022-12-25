@@ -1,6 +1,6 @@
 --- dwm.c
 +++ dwm.c
-@@ -189,7 +195,7 @@ static void maprequest(XEvent *e);
+@@ -190,7 +196,7 @@ static void maprequest(XEvent *e);
  static void monocle(Monitor *m);
  static void motionnotify(XEvent *e);
  static void movemouse(const Arg *arg);
@@ -9,7 +9,7 @@
  static void pop(Client *);
  static void propertynotify(XEvent *e);
  static void quit(const Arg *arg);
-@@ -1967,8 +2063,10 @@ updategeom(void)
+@@ -1972,8 +2070,10 @@ updategeom(void)
  		if (n <= nn) { /* new monitors available */
  			for (i = 0; i < (nn - n); i++) {
  				for (m = mons; m && m->next; m = m->next);
@@ -21,7 +21,7 @@
  				else
  					mons = createmon();
  			}
-@@ -1988,16 +2086,13 @@ updategeom(void)
+@@ -1993,16 +2093,13 @@ updategeom(void)
  		} else { /* less monitors available nn < n */
  			for (i = nn; i < n; i++) {
  				for (m = mons; m && m->next; m = m->next);
@@ -43,7 +43,7 @@
  				cleanupmon(m);
  			}
  		}
-@@ -2232,8 +2345,8 @@ zoom(const Arg *arg)
+@@ -2238,8 +2354,8 @@ zoom(const Arg *arg)
  	if (!selmon->lt[selmon->sellt]->arrange
  	|| (selmon->sel && selmon->sel->isfloating))
  		return;
