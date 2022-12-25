@@ -1,0 +1,56 @@
+--- dwm.c
++++ dwm.c
+@@ -189,7 +195,7 @@ static void maprequest(XEvent *e);
+ static void monocle(Monitor *m);
+ static void motionnotify(XEvent *e);
+ static void movemouse(const Arg *arg);
+-static Client *nexttiled(Client *c);
++static Client *nexttiled(Client *c, Monitor *m);
+ static void pop(Client *);
+ static void propertynotify(XEvent *e);
+ static void quit(const Arg *arg);
+@@ -1967,8 +2063,10 @@ updategeom(void)
+ 		if (n <= nn) { /* new monitors available */
+ 			for (i = 0; i < (nn - n); i++) {
+ 				for (m = mons; m && m->next; m = m->next);
+-				if (m)
++				if (m) {
+ 					m->next = createmon();
++					attachclients(m->next);
++				}
+ 				else
+ 					mons = createmon();
+ 			}
+@@ -1988,16 +2086,13 @@ updategeom(void)
+ 		} else { /* less monitors available nn < n */
+ 			for (i = nn; i < n; i++) {
+ 				for (m = mons; m && m->next; m = m->next);
+-				while ((c = m->clients)) {
+-					dirty = 1;
+-					m->clients = c->next;
+-					detachstack(c);
+-					c->mon = mons;
+-					attach(c);
+-					attachstack(c);
+-				}
+ 				if (m == selmon)
+ 					selmon = mons;
++				for (c = m->cl->clients; c; c = c->next) {
++					dirty = True;
++					if (c->mon == m)
++						c->mon = selmon;
++				}
+ 				cleanupmon(m);
+ 			}
+ 		}
+@@ -2232,8 +2345,8 @@ zoom(const Arg *arg)
+ 	if (!selmon->lt[selmon->sellt]->arrange
+ 	|| (selmon->sel && selmon->sel->isfloating))
+ 		return;
+-	if (c == nexttiled(selmon->clients))
+-		if (!c || !(c = nexttiled(c->next)))
++	if (c == nexttiled(selmon->cl->clients, selmon))
++		if (!c || !(c = nexttiled(c->next, selmon)))
+ 			return;
+ 	pop(c);
+ }
