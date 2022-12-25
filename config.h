@@ -74,9 +74,9 @@ static const char *powercmd[] = { "rofi", "-show power-menu -modi power-menu:~/.
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY						XK_w,		spawn,			SHCMD("playerctl --player=ncspot,spotify play-pause") },
-	{ MODKEY						XK_e,		spawn,			SHCMD("playerctl --player=ncspot,spotify next") },
-	{ MODKEY						XK_e,		spawn,			SHCMD("playerctl --player=ncspot,spotify previous") },
+	{ MODKEY,						XK_w,		spawn,			SHCMD("playerctl --player=ncspot,spotify play-pause") },
+	{ MODKEY,						XK_e,		spawn,			SHCMD("playerctl --player=ncspot,spotify next") },
+	{ MODKEY,						XK_e,		spawn,			SHCMD("playerctl --player=ncspot,spotify previous") },
 	{ MODKEY,						XK_p,	   spawn,		   {.v = roficmd } },
 	{ MODKEY,						XK_Escape, spawn,		   {.v = powercmd } },
 	{ MODKEY,						XK_Return, spawn,          {.v = termcmd } },
