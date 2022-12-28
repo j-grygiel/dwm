@@ -14,6 +14,8 @@ static const int smartgaps          = 0;        /* 1 means no outer gap when the
 static const int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
+static const int vertpad            = 0;       /* vertical padding of bar */
+static const int sidepad            = 10;       /* horizontal padding of bar */
 static const int focusonwheel		= 0;
 static const char *fonts[]          = { "Iosevka Custom:size=12", "Hack Nerd Font Mono:size=14" };
 static const char dmenufont[]       = "Iosevka Custom:size=12";
