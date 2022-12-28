@@ -1,5 +1,13 @@
-# JDWM
-dwm is an extremely fast, small, and dynamic window manager for X.
+# jdwm
+jdwm, my fork of dwm, an extremely fast, small, and dynamic window manager for X.
+
+## Applied Patches
+- [Single Tagset](https://dwm.suckless.org/patches/single_tagset/)
+- [Focus on Click](https://dwm.suckless.org/patches/focusonclick/)
+- [Swallow](https://dwm.suckless.org/patches/swallow/)
+- [Centered Window Name](https://dwm.suckless.org/patches/centeredwindowname/)
+- [Hide Vacant Tags](https://dwm.suckless.org/patches/hide_vacant_tags/)
+- [Tag Labels](https://dwm.suckless.org/patches/taglabels/)
 
 ## Installation
 Enter the following command to build and install dwm (if necessary as root):
