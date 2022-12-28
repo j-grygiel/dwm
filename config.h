@@ -3,7 +3,7 @@
 #define BROWSER "librewolf"
 
 /* appearance */
-static const unsigned int borderpx  = 1;        /* border pixel of windows */
+static const unsigned int borderpx  = 3;        /* border pixel of windows */
 /* static const unsigned int gappx     = 5;        /1* gaps size between windows *1/ */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int gappih    = 10;       /* horiz inner gap between windows */
