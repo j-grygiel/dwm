@@ -1,5 +1,5 @@
 # jdwm
-jdwm, my fork of dwm, an extremely fast, small, and dynamic window manager for X.
+My fork of dwm, an extremely fast, small, and dynamic window manager for X.
 
 ## Applied Patches
 - [Single Tagset](https://dwm.suckless.org/patches/single_tagset/)
