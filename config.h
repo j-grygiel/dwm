@@ -73,16 +73,16 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_white1, "-sb", col_green, "-sf", col_gray4, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-i", NULL };
 static const char *termcmd[]  = { "st", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,						XK_w,	   spawn,			SHCMD("playerctl --player=ncspot,spotify play-pause") },
-	{ MODKEY,						XK_e,	   spawn,			SHCMD("playerctl --player=ncspot,spotify next") },
-	{ MODKEY,						XK_q,	   spawn,			SHCMD("playerctl --player=ncspot,spotify previous") },
-	{ MODKEY,						XK_p,	   spawn,			SHCMD("rofi -show") },
-	{ MODKEY|ShiftMask,				XK_s,      spawn,			SHCMD("flameshot gui") },
+	{ MODKEY,						XK_w,	   spawn,          SHCMD("playerctl --player=ncspot,spotify play-pause") },
+	{ MODKEY,						XK_e,	   spawn,          SHCMD("playerctl --player=ncspot,spotify next") },
+	{ MODKEY,						XK_q,	   spawn,          SHCMD("playerctl --player=ncspot,spotify previous") },
+	{ MODKEY|ShiftMask,				XK_s,      spawn,          SHCMD("flameshot gui") },
+	{ MODKEY,						XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,						XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,						XK_b,	   spawn,		   {.v = (const char*[]){ BROWSER, NULL } } },
 	{ MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
