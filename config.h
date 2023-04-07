@@ -1,5 +1,6 @@
 /* See LICENSE file for copyright and license details. */
-/* constants */					
+
+/* Constants */					
 #define BROWSER "librewolf"
 
 /* appearance */
@@ -82,6 +83,8 @@ static const Key keys[] = {
 	{ MODKEY,						XK_e,	   spawn,          SHCMD("playerctl --player=ncspot,spotify next") },
 	{ MODKEY,						XK_q,	   spawn,          SHCMD("playerctl --player=ncspot,spotify previous") },
 	{ MODKEY|ShiftMask,				XK_s,      spawn,          SHCMD("flameshot gui") },
+	{ MODKEY,						XK_s,	   spawn,          SHCMD("~/scripts/changesink") },
+	{ MODKEY|ShiftMask,				XK_c,	   spawn,          SHCMD("~/scripts/connectbluetoothdevice") },
 	{ MODKEY,						XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,						XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,						XK_b,	   spawn,		   {.v = (const char*[]){ BROWSER, NULL } } },
