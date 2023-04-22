@@ -85,9 +85,10 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,				XK_s,      spawn,          SHCMD("flameshot gui") },
 	{ MODKEY,						XK_s,	   spawn,          SHCMD("~/.local/bin/changesink") },
 	{ MODKEY|ShiftMask,				XK_c,	   spawn,          SHCMD("~/.local/bin/connectbluetoothdevice") },
-	/* { MODKEY,						XK_p,      spawn,          {.v = dmenucmd } }, */
-	{ MODKEY,						XK_p,      spawn,          SHCMD("rofi -show") },
-	{ MODKEY,						XK_v,      spawn,          SHCMD("rofi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}'") },
+	{ MODKEY,						XK_v,      spawn,          SHCMD("~/.local/bin/dmenugreenclip") },
+	{ MODKEY,						XK_p,      spawn,          {.v = dmenucmd } },
+	/* { MODKEY,						XK_p,      spawn,          SHCMD("rofi -show") }, */
+	/* { MODKEY,						XK_v,      spawn,          SHCMD("rofi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}'") }, */
 	{ MODKEY,						XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,						XK_b,	   spawn,		   {.v = (const char*[]){ BROWSER, NULL } } },
 	{ MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
