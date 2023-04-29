@@ -83,9 +83,9 @@ static const Key keys[] = {
 	{ MODKEY,						XK_e,	   spawn,          SHCMD("playerctl --player=ncspot,spotify next") },
 	{ MODKEY,						XK_q,	   spawn,          SHCMD("playerctl --player=ncspot,spotify previous") },
 	{ MODKEY|ShiftMask,				XK_s,      spawn,          SHCMD("flameshot gui") },
-	{ MODKEY,						XK_s,	   spawn,          SHCMD("~/.local/bin/changesink") },
-	{ MODKEY|ShiftMask,				XK_c,	   spawn,          SHCMD("~/.local/bin/connectbluetoothdevice") },
-	{ MODKEY,						XK_v,      spawn,          SHCMD("~/.local/bin/dmenugreenclip") },
+	{ MODKEY,						XK_s,	   spawn,          SHCMD("~/.local/bin/change-sink") },
+	{ MODKEY|ShiftMask,				XK_c,	   spawn,          SHCMD("~/.local/bin/connect-bluetooth-device") },
+	{ MODKEY,						XK_v,      spawn,          SHCMD("~/.local/bin/dmenu-greenclip") },
 	{ MODKEY,						XK_p,      spawn,          {.v = dmenucmd } },
 	/* { MODKEY,						XK_p,      spawn,          SHCMD("rofi -show") }, */
 	/* { MODKEY,						XK_v,      spawn,          SHCMD("rofi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}'") }, */
