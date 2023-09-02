@@ -91,6 +91,7 @@ static const Key keys[] = {
 	{ MODKEY,						XK_e,	   spawn,          SHCMD("playerctl --player=ncspot,spotify next") },
 	{ MODKEY,						XK_q,	   spawn,          SHCMD("playerctl --player=ncspot,spotify previous") },
 	{ MODKEY|ShiftMask,				XK_s,      spawn,          SHCMD("scrot -s -e 'xclip -selection clipboard -t image/png -i $f && rm $f'") },
+	{ MODKEY|ControlMask,			XK_s,      spawn,          SHCMD("scrot -s ~/pix/screenshots/screenshot_%Y-%m-%d-%H%M%S.png") },
 	{ MODKEY,						XK_s,	   spawn,          SHCMD("~/.local/bin/change-sink") },
 	{ MODKEY|ShiftMask,				XK_c,	   spawn,          SHCMD("~/.local/bin/connect-bluetooth-device") },
 	{ MODKEY,						XK_v,      spawn,          SHCMD("~/.local/bin/dmenu-greenclip") },
